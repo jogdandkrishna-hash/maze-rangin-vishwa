@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>माझे रंगीन विश्व | ब्लॉग, कविता आणि कथा</title>
+    <!-- Tailwind CSS for high aesthetic layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Using highly compatible standard system fonts for Marathi to completely eliminate rendering bugs */
+        body, button, input, select, textarea, h1, h2, h3, h4 {
+            font-family: 'Mangal', 'Shusha', 'Nirmala UI', 'Arial Unicode MS', 'Segoe UI', system-ui, sans-serif !important;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f43f5e;
+            border-radius: 10px;
+        }
+        .glass {
+            background: rgba(30, 27, 75, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #0f1123 0%, #25103a 50%, #3b0717 100%);
+        }
+    </style>
+</head>
+<body class="vibrant-gradient text-slate-100 min-h-screen antialiased selection:bg-rose-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass px-6 py-4 border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-amber-300 to-rose-400">
+                माझे रंगीन विश्व
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-rose-400 transition-colors">माझ्याबद्दल</a>
+                <a href="#feed" class="hover:text-rose-400 transition-colors">लेखन संग्रह</a>
+                <a href="#creator" class="hover:text-amber-400 transition-colors text-amber-300"><i class="fa-solid fa-pen-nib mr-1"></i> नवीन लिहा</a>
+                <a href="#connect" class="hover:text-rose-400 transition-colors">कनेक्ट व्हा</a>
+            </div>
+            <div>
+                <button onclick="toggleAdminModal()" class="px-4 py-2 text-xs font-bold glass text-rose-300 hover:text-white hover:bg-rose-600 rounded-full transition-all">
+                    <i class="fa-solid fa-lock mr-1"></i> अ‍ॅडमिन पॅनेल
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative overflow-hidden py-20 px-6 text-center">
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+            <div class="inline-block px-4 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-amber-300 mb-2">
+                ✨ शब्दांचे तरंग, आयुष्याचे रंग ✨
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black tracking-wide leading-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-200 to-pink-400">
+                माझ्या जीवनातील रंगीत आठवणी आणि अनुभव
+            </h1>
+            <p class="text-base md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                इथे तुम्हाला भेटतील माझ्या मनातील भावना, काही गोड कविता, रंजक कथा आणि जीवनातील सुंदर अनुभवांची शिदोरी...
+            </p>
+            <div class="pt-6 flex flex-wrap justify-center gap-4">
+                <a href="#feed" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-500 hover:to-pink-500 font-bold rounded-full shadow-lg transition-all transform hover:-translate-y-0.5">
+                    लेखन वाचायला सुरुवात करा
+                </a>
+                <a href="#connect" class="px-8 py-3 glass font-bold rounded-full hover:bg-white/10 transition-all">
+                    माझ्याशी जोडून घ्या
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 px-6 max-w-6xl mx-auto">
+        <div class="glass p-8 md:p-12 rounded-3xl grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-4 flex justify-center">
+                <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 p-1">
+                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-feather-pointed text-5xl text-amber-300"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-8 space-y-4 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-rose-400">प्रिय वाचकहो, नमस्कार! 👋</h2>
+                <p class="text-base text-slate-300 leading-relaxed">
+                    आयुष्य हे वेगवेगळ्या रंगांनी नटलेलं असतं. कधी त्यात सुखाचा गुलाबी रंग असतो, तर कधी संघर्षाचा गर्द निळा. या सर्व रंगीबेरंगी अनुभवांना मी शब्दांच्या चौकटीत गुंफण्याचा एक छोटासा प्रयत्न करत आहे.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-white/5">
+                        <h4 class="font-bold text-amber-300 mb-1">हृदयस्पर्शी कविता</h4>
+                        <p class="text-xs text-slate-400">भावनांचे तरंग टिपणाऱ्या ओळी.</p>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-white/5">
+                        <h4 class="font-bold text-rose-400 mb-1">मनोरंजक कथा</h4>
+                        <p class="text-xs text-slate-400">कल्पनेच्या आणि वास्तवाच्या गोष्टी.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <section id="feed" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-amber-300">
+                माझे शब्दरूप विश्व
+            </h2>
+            <p class="text-slate-400 text-sm">खालील कॅटेगरी निवडून तुम्ही माझे विविध पैलूंचे लेखन वाचू शकता.</p>
+            
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 pt-4">
+                <button onclick="filterPosts('all')" id="btn-all" class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-rose-500 text-white">
+                    सर्व काही
+                </button>
+                <button onclick="filterPosts('blog')" id="btn-blog" class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300 hover:bg-white/10">
+                    ब्लॉग्स
+                </button>
+                <button onclick="filterPosts('poem')" id="btn-poem" class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300 hover:bg-white/10">
+                    कविता
+                </button>
+                <button onclick="filterPosts('story')" id="btn-story" class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300 hover:bg-white/10">
+                    कथा
+                </button>
+                <button onclick="filterPosts('experience')" id="btn-experience" class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300 hover:bg-white/10">
+                    अनुभव
+                </button>
+            </div>
+        </div>
+
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic Posts go here -->
+        </div>
+    </section>
+
+    <!-- Post Creator Form -->
+    <section id="creator" class="py-12 px-6 max-w-4xl mx-auto">
+        <div class="glass p-8 rounded-3xl space-y-6 border border-amber-500/10">
+            <div class="flex items-center space-x-4">
+                <div class="p-3 bg-amber-500/20 text-amber-300 rounded-xl text-xl">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white">नवीन अनुभव किंवा लेखन जोडा</h3>
+                    <p class="text-xs text-slate-400">इथे लिहिलेली माहिती लगेच तुमच्या ब्लॉगवर वरती दिसेल!</p>
+                </div>
+            </div>
+
+            <form id="post-form" onsubmit="savePost(event)" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">शीर्षक (Title)</label>
+                        <input type="text" id="post-title" required placeholder="उदा. पावसाची ती सांज वेळ..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 placeholder-slate-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">प्रकार (Category)</label>
+                        <select id="post-category" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                            <option value="blog">ब्लॉग (Blog)</option>
+                            <option value="poem">कविता (Poem)</option>
+                            <option value="story">कथा (Story)</option>
+                            <option value="experience">अनुभव (Experience)</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">संक्षिप्त वर्णन (Short Hook)</label>
+                    <input type="text" id="post-summary" required placeholder="एक वाक्यात लहान वर्णन द्या..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 placeholder-slate-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमचे पूर्ण लेखन (Full Content)</label>
+                    <textarea id="post-content" required rows="6" placeholder="इथे तुमचे मनमोकळे विचार, कविता किंवा कथा सविस्तर लिहा..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 placeholder-slate-500 text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 font-bold rounded-xl text-sm text-white shadow-md">
+                    🚀 ब्लॉगवर पब्लिश करा
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Connect / Sign up Form -->
+    <section id="connect" class="py-12 px-6 max-w-4xl mx-auto">
+        <div class="glass p-8 rounded-3xl border border-rose-500/20 shadow-2xl space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-rose-400">
+                    माझ्या प्रवासात सोबती व्हा!
+                </h2>
+                <p class="text-xs md:text-sm text-slate-300">
+                    तुम्हाला माझे विचार आवडले असल्यास, नवीन साहित्याचे अपडेट्स थेट मिळवण्यासाठी हा फॉर्म नक्की भरा.
+                </p>
+            </div>
+            
+            <form id="connect-form" onsubmit="saveLead(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमचे पूर्ण नाव (Full Name)</label>
+                    <input type="text" id="lead-name" required placeholder="उदा. सचिन मोरे" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">मोबाईल नंबर (Mobile Number)</label>
+                        <input type="tel" id="lead-phone" pattern="[0-9]{10}" required placeholder="उदा. 9876543210" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">ईमेल आयडी (Email ID)</label>
+                        <input type="email" id="lead-email" required placeholder="उदा. sachin@gmail.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमची प्रतिक्रिया / टीप (ऐच्छिक)</label>
+                    <textarea id="lead-note" rows="3" placeholder="तुमची प्रतिक्रिया लिहा..." class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-rose-500 to-pink-600 font-bold rounded-xl text-sm text-white shadow-lg flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> मला जोडून घ्या!
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass border-t border-white/5 py-8 text-center text-xs text-slate-400">
+        <p class="font-bold text-slate-300 mb-1">माझे रंगीन विश्व</p>
+        <p>© 2026 सर्व हक्क सुरक्षित.</p>
+    </footer>
+
+    <!-- Viewer Modal -->
+    <div id="read-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 justify-center items-center p-4">
+        <div class="glass max-w-2xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[85vh]">
+            <div class="p-6 border-b border-white/10 flex justify-between items-start">
+                <div>
+                    <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 uppercase"></span>
+                    <h3 id="modal-title" class="text-2xl font-bold mt-2 text-white"></h3>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-slate-200 leading-relaxed whitespace-pre-line text-base" id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Admin Leads Modal -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 justify-center items-center p-4">
+        <div class="glass max-w-3xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[80vh]">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-slate-950/60">
+                <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-users mr-2"></i>कनेक्ट झालेल्या वाचकांची यादी</h3>
+                <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-slate-300">
+                            <th class="pb-2 pr-2">क्र.</th>
+                            <th class="pb-2 pr-2">नाव</th>
+                            <th class="pb-2 pr-2">मोबाईल</th>
+                            <th class="pb-2 pr-2">ईमेल</th>
+                            <th class="pb-2">टीप</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leads-table-body" class="text-slate-300 divide-y divide-slate-800">
+                        <!-- Content -->
+                    </tbody>
+                </table>
+                <div id="no-leads" class="text-center py-8 text-slate-500 hidden">अद्याप कोणीही फॉर्म भरलेला नाही.</div>
+            </div>
+            <div class="p-4 border-t border-white/10 bg-slate-950/40 flex justify-between items-center">
+                <button onclick="clearLeads()" class="px-3 py-1.5 bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white rounded-lg text-xs font-bold">
+                    डेटा साफ करा
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Toast -->
+    <div id="success-alert" class="fixed bottom-6 right-6 glass border-rose-500 p-4 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 text-xs font-bold text-white">
+        <span id="alert-msg"></span>
+    </div>
+
+    <!-- App Logic Script -->
+    <script>
+        const defaultPosts = [
+            {
+                id: 1,
+                title: "पावसाची ती सांज वेळ",
+                category: "poem",
+                summary: "पावसातल्या त्या पहिल्या थेंबासोबत मनात उठणाऱ्या प्रेमाच्या सुंदर लहरी...",
+                content: "पावसाची ती सांज वेळ, मन ओलेचिंब करणारे ऋतू...\nखिडकीबाहेर कोसळणारा पाऊस आणि मनात दाटून येणार तू!\n\nचहाच्या वाफाळलेल्या कपात तुझा तो हसरा चेहरा दिसतो,\nपहिल्या पावसाचा गंध जणू आपल्या आठवणीत दरवळतो."
+            },
+            {
+                id: 2,
+                title: "तो शेवटचा चहा आणि कट्ट्यावरच्या गप्पा",
+                category: "story",
+                summary: "कॉलेजचा शेवटचा दिवस आणि त्या निरोपाच्या क्षणी मित्रांसोबत घेतलेला तो चहा.",
+                content: "कॉलेजचे ४ वर्ष कसे संपले कळलेच नाही. पण तो शेवटचा दिवस आणि कॉलेजच्या गेटबाहेरच्या चहाच्या गाड्यावरची ती शेवटची भेट अजूनही काळजात घर करून आहे.\n\n'पुन्हा कधी भेटू यार?' या प्रश्नावर सगळ्यांकडे शांतता होती."
+            }
+        ];
+
+        let posts = JSON.parse(localStorage.getItem('knik_posts')) || defaultPosts;
+        let leads = JSON.parse(localStorage.getItem('knik_leads')) || [];
+        let currentFilter = 'all';
+
+        function filterPosts(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('bg-rose-500', 'text-white'));
+            document.getElementById(`btn-${cat}`).classList.add('bg-rose-500', 'text-white');
+            renderPosts();
+        }
+
+        function renderPosts() {
+            const grid = document.getElementById('posts-grid');
+            grid.innerHTML = '';
+            const filtered = currentFilter === 'all' ? posts : posts.filter(p => p.category === currentFilter);
+
+            filtered.forEach(p => {
+                const catLabel = p.category === 'poem' ? 'कविता' : p.category === 'story' ? 'कथा' : p.category === 'experience' ? 'अनुभव' : 'ब्लॉग';
+                grid.innerHTML += `
+                    <div class="glass p-6 rounded-2xl flex flex-col justify-between border border-white/5">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-xs text-rose-300 font-bold">
+                                <span>${catLabel}</span>
+                                <span class="text-slate-500">आज</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">${p.title}</h3>
+                            <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">${p.summary}</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/5 flex justify-between items-center">
+                            <button onclick="readPost(${p.id})" class="text-xs font-bold text-rose-400 hover:underline">संपूर्ण वाचा →</button>
+                            <button onclick="deletePost(${p.id})" class="text-slate-600 hover:text-rose-500 text-xs"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function readPost(id) {
+            const p = posts.find(x => x.id === id);
+            if(p) {
+                document.getElementById('modal-title').textContent = p.title;
+                document.getElementById('modal-content').textContent = p.content;
+                document.getElementById('modal-category').textContent = p.category;
+                document.getElementById('read-modal').classList.remove('hidden');
+                document.getElementById('read-modal').classList.add('flex');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('read-modal').classList.add('hidden');
+        }
+
+        function savePost(e) {
+            e.preventDefault();
+            const title = document.getElementById('post-title').value;
+            const category = document.getElementById('post-category').value;
+            const summary = document.getElementById('post-summary').value;
+            const content = document.getElementById('post-content').value;
+
+            posts.unshift({ id: Date.now(), title, category, summary, content });
+            localStorage.setItem('knik_posts', JSON.stringify(posts));
+            showAlert("नवीन लेखन यशस्वीरित्या जोडले गेले!");
+            document.getElementById('post-form').reset();
+            renderPosts();
+        }
+
+        function deletePost(id) {
+            if(confirm("डिलीट करायचे का?")) {
+                posts = posts.filter(p => p.id !== id);
+                localStorage.setItem('knik_posts', JSON.stringify(posts));
+                renderPosts();
+                showAlert("लेखन डिलीट केले.");
+            }
+        }
+
+        function saveLead(e) {
+            e.preventDefault();
+            const name = document.getElementById('lead-name').value;
+            const phone = document.getElementById('lead-phone').value;
+            const email = document.getElementById('lead-email').value;
+            const note = document.getElementById('lead-note').value;
+
+            leads.push({ id: Date.now(), name, phone, email, note });
+            localStorage.setItem('knik_leads', JSON.stringify(leads));
+            showAlert("धन्यवाद! माहिती जतन झाली.");
+            document.getElementById('connect-form').reset();
+        }
+
+        function toggleAdminModal() {
+            const m = document.getElementById('admin-modal');
+            if(m.classList.contains('hidden')) {
+                const body = document.getElementById('leads-table-body');
+                body.innerHTML = '';
+                if(leads.length === 0) {
+                    document.getElementById('no-leads').classList.remove('hidden');
+                } else {
+                    document.getElementById('no-leads').classList.add('hidden');
+                    leads.forEach((l, i) => {
+                        body.innerHTML += `<tr><td class="py-2">${i+1}</td><td class="font-bold text-white">${l.name}</td><td>${l.phone}</td><td>${l.email}</td><td>${l.note}</td></tr>`;
+                    });
+                }
+                m.classList.remove('hidden'); m.classList.add('flex');
+            } else {
+                m.classList.add('hidden');
+            }
+        }
+
+        function clearLeads() {
+            if(confirm("सर्व डेटा साफ करायचा का?")) {
+                leads = []; localStorage.removeItem('knik_leads'); toggleAdminModal(); showAlert("डेटा साफ केला.");
+            }
+        }
+
+        function showAlert(msg) {
+            const a = document.getElementById('success-alert');
+            document.getElementById('alert-msg').textContent = msg;
+            a.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => a.classList.add('translate-y-20', 'opacity-0'), 3000);
+        }
+
+        renderPosts();
+    </script>
+</body>
+</html>
+index.html
+Displaying index.html.
