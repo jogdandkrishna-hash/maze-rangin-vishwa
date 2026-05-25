@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>माझे रंगीन विश्व</title>
-    <!-- Tailwind CSS for high aesthetic layout -->
+    <title>Knik@ | माझे रंगीन विश्व</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -19,96 +19,167 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: #090514;
         }
         ::-webkit-scrollbar-thumb {
-            background: #f43f5e;
+            background: linear-gradient(to bottom, #ec4899, #f43f5e);
             border-radius: 10px;
         }
-        .glass {
-            background: rgba(30, 27, 75, 0.45);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* स्पेशल रॉयल निऑन बॅकग्राउंड फील */
+        .royal-glow-bg {
+            background: radial-gradient(circle at 50% 0%, #2e1065 0%, #1e1b4b 35%, #090514 100%);
         }
-        .vibrant-gradient {
-            background: linear-gradient(135deg, #0f1123 0%, #25103a 50%, #3b0717 100%);
+        .premium-glass {
+            background: rgba(15, 11, 28, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
-        /* Signature font look */
         .signature-style {
             font-family: 'Georgia', 'Times New Roman', serif !important;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+        }
+        .neon-border-hover:hover {
+            border-color: rgba(244, 63, 94, 0.6);
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
+            transform: translateY(-4px);
         }
     </style>
 </head>
-<body class="vibrant-gradient text-slate-100 min-h-screen antialiased selection:bg-rose-500 selection:text-white">
+<body class="royal-glow-bg text-slate-200 min-h-screen antialiased selection:bg-pink-600 selection:text-white">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 glass px-4 md:px-6 py-4 border-b border-white/5">
+    <nav class="sticky top-0 z-50 premium-glass px-4 md:px-6 py-4 border-b border-pink-500/10">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-amber-300 to-rose-400 signature-style">
+            <a href="#" class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-rose-400 to-amber-300 signature-style">
                 Knik@
             </a>
-            <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-rose-400 transition-colors">माझ्याबद्दल</a>
-                <a href="#feed" class="hover:text-rose-400 transition-colors">लेखन संग्रह</a>
-                <a href="#creator" class="hover:text-amber-400 transition-colors text-amber-300"><i class="fa-solid fa-pen-nib mr-1"></i> नवीन लिहा</a>
-                <a href="#connect" class="hover:text-rose-400 transition-colors">कनेक्ट व्हा</a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#about" class="hover:text-pink-400 transition-colors">माझ्याबद्दल</a>
+                <a href="#gallery" class="hover:text-pink-400 transition-colors">दृश्य कॅनव्हास</a>
+                <a href="#feed" class="hover:text-pink-400 transition-colors">लेखन संग्रह</a>
+                <a href="#creator" class="hover:text-amber-400 transition-colors text-amber-300"><i class="fa-solid fa-feather mr-1"></i> नवीन लिहा</a>
             </div>
             <div>
-                <button onclick="toggleAdminModal()" class="px-3 py-2 text-xs font-bold glass text-rose-300 hover:text-white hover:bg-rose-600 rounded-full transition-all">
-                    <i class="fa-solid fa-lock mr-1"></i> अ‍ॅडमिन
+                <button onclick="toggleAdminModal()" class="px-4 py-2 text-xs font-bold premium-glass text-pink-300 hover:text-white hover:bg-pink-600 rounded-full transition-all">
+                    <i class="fa-solid fa-user-gear mr-1"></i> अ‍ॅडमिन
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Header -->
-    <header class="relative overflow-hidden py-20 px-4 text-center">
+    <header class="relative overflow-hidden py-24 px-4 text-center">
+        <!-- Background Decorative Light Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-pink-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/3 w-[200px] h-[200px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+
         <div class="relative z-10 max-w-4xl mx-auto space-y-6">
-            <div class="inline-block px-4 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-amber-300 mb-2">
-                ✨ शब्दांचे तरंग, आयुष्याचे रंग ✨
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full premium-glass text-xs font-bold tracking-widest text-pink-300 border border-pink-500/20">
+                <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span> शब्दांचे तरंग • आयुष्याचे रंग
             </div>
-            <!-- नाव काढून इथे तुमची कडक सही आणली आहे -->
-            <h1 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-200 to-pink-400 signature-style py-2">
+            <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-rose-300 to-amber-200 signature-style py-2">
                 Knik@
             </h1>
-            <p class="text-sm md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed break-words">
+            <p class="text-sm md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-light break-words">
                 माझ्या मनातील भावना, काही गोड कविता, रंजक कथा आणि जीवनातील सुंदर अनुभवांची शिदोरी... या माझ्या डिजिटल डायरीत तुमचे सहर्ष स्वागत आहे!
             </p>
-            <div class="pt-4 flex flex-wrap justify-center gap-3">
-                <a href="#feed" class="px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-xs md:text-sm font-bold rounded-full shadow-lg transition-all">
+            <div class="pt-6 flex flex-wrap justify-center gap-4">
+                <a href="#feed" class="px-8 py-3.5 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 hover:opacity-90 text-xs md:text-sm font-bold rounded-xl shadow-lg shadow-pink-500/20 transition-all transform hover:-translate-y-0.5">
                     लेखन संग्रह वाचा
+                </a>
+                <a href="#gallery" class="px-8 py-3.5 premium-glass text-xs md:text-sm font-bold rounded-xl hover:bg-white/5 transition-all">
+                    गॅलरी पहा
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- Special Tool: मूड प्रमाणे थीम बदला -->
+    <div class="max-w-4xl mx-auto px-4 mb-12">
+        <div class="premium-glass p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-pink-500/10">
+            <div class="flex items-center gap-3 text-center sm:text-left">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-400 text-lg"></i>
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">वाचकांचा मूड टूल (Mood Filter)</h4>
+                    <p class="text-[11px] text-slate-400">तुमच्या आवडीनुसार वेबसाईटचा फील बदला</p>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="changeMood('midnight')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-purple-950 text-purple-300 border border-purple-500/30">🌌 मध्यरात्र</button>
+                <button onclick="changeMood('sunset')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-950 text-amber-300 border border-amber-500/30">🌇 सांजवेळ</button>
+                <button onclick="changeMood('cyber')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-950 text-pink-400 border border-pink-500/30">🔮 निऑन</button>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section id="about" class="py-8 px-4 max-w-6xl mx-auto">
-        <div class="glass p-6 md:p-12 rounded-3xl grid md:grid-cols-12 gap-8 items-center">
+    <section id="about" class="py-12 px-4 max-w-6xl mx-auto">
+        <div class="premium-glass p-8 md:p-12 rounded-3xl grid md:grid-cols-12 gap-8 items-center border border-pink-500/10">
             <div class="md:col-span-4 flex justify-center">
-                <div class="w-40 h-40 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 p-1">
-                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
-                        <span class="text-3xl font-black text-amber-300 signature-style">K@</span>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-amber-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-opacity"></div>
+                    <div class="relative w-44 h-44 bg-slate-950 rounded-2xl flex flex-col items-center justify-center border border-white/10 p-4">
+                        <i class="fa-solid fa-pen-fancy text-5xl text-pink-400 mb-2"></i>
+                        <span class="text-2xl font-black text-amber-300 signature-style">Knik@</span>
                     </div>
                 </div>
             </div>
             <div class="md:col-span-8 space-y-4 text-center md:text-left">
-                <h2 class="text-2xl md:text-3xl font-bold text-rose-400 break-words">माझ्याबद्दल काहीतरी... ✍️</h2>
-                <h3 class="text-lg font-bold text-slate-200 signature-style">मी Knik...</h3>
-                <p class="text-sm md:text-base text-slate-300 leading-relaxed break-words">
+                <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-amber-300">माझ्याबद्दल काहीतरी... ✍️</h2>
+                <h3 class="text-lg font-medium text-slate-300">मी <span class="signature-style text-pink-400 font-bold">Knik</span>...</h3>
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light break-words">
                     व्यवसायाने मेकॅनिकल इंजिनिअर असलो, तरी माझं खरं मन हे शब्दांच्या दुनियेत रमतं. आयुष्य हे वेगवेगळ्या रंगांनी नटलेलं असतं. कधी त्यात सुखाचा गुलाबी रंग असतो, तर कधी संघर्षाचा गर्द निळा. या सर्व अनुभवांना, भावनांना आणि विचारांना मी कविता, चारोळ्या आणि कथांच्या माध्यमातून मांडत आहे.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    <div class="bg-slate-900/40 p-4 rounded-xl border border-white/5">
-                        <h4 class="font-bold text-amber-300 mb-1"><i class="fa-solid fa-heart mr-1"></i> हृदयस्पर्शी साहित्य</h4>
-                        <p class="text-xs text-slate-400">भावनांचे तरंग टिपणाऱ्या ओळी आणि जीवनप्रवास.</p>
-                    </div>
-                    <div class="bg-slate-900/40 p-4 rounded-xl border border-white/5">
-                        <h4 class="font-bold text-rose-400 mb-1"><i class="fa-solid fa-book mr-1"></i> कथा आणि ब्लॉग्स</h4>
-                        <p class="text-xs text-slate-400">कल्पनेच्या आणि वास्तवाच्या काही खास गोष्टी.</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Section (नवीन जोडलेला फोटो विभाग) -->
+    <section id="gallery" class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="text-center space-y-2 mb-10">
+            <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-rose-300 to-amber-200">
+                शब्दांचे दृश्य रूप (Visual Canvas)
+            </h2>
+            <p class="text-slate-400 text-xs md:text-sm">लेखनाला जिवंत करणारे काही निवडक सुंदर फोटो बॅकग्राउंड्स</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Photo Card 1 -->
+            <div class="premium-glass rounded-2xl overflow-hidden border border-white/5 group neon-border-hover transition-all duration-300">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=600&auto=format&fit=crop&q=80" alt="Poetry Theme" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                </div>
+                <div class="p-4 space-y-1">
+                    <span class="text-[10px] uppercase tracking-wider text-pink-400 font-bold">भावविश्व</span>
+                    <h4 class="text-sm font-bold text-white">शांत सांजवेळ आणि कविता</h4>
+                </div>
+            </div>
+
+            <!-- Photo Card 2 -->
+            <div class="premium-glass rounded-2xl overflow-hidden border border-white/5 group neon-border-hover transition-all duration-300">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80" alt="Tech & Cosmos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                </div>
+                <div class="p-4 space-y-1">
+                    <span class="text-[10px] uppercase tracking-wider text-amber-400 font-bold">विज्ञान आणि कल्पकता</span>
+                    <h4 class="text-sm font-bold text-white">ब्रह्मांड आणि विचारांचे तरंग</h4>
+                </div>
+            </div>
+
+            <!-- Photo Card 3 -->
+            <div class="premium-glass rounded-2xl overflow-hidden border border-white/5 group neon-border-hover transition-all duration-300">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&auto=format&fit=crop&q=80" alt="Life Journey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                </div>
+                <div class="p-4 space-y-1">
+                    <span class="text-[10px] uppercase tracking-wider text-rose-400 font-bold">जीवनप्रवास</span>
+                    <h4 class="text-sm font-bold text-white">संघर्ष आणि यशाची शिखरे</h4>
                 </div>
             </div>
         </div>
@@ -117,28 +188,17 @@
     <!-- Main Content Grid -->
     <section id="feed" class="py-12 px-4 max-w-7xl mx-auto">
         <div class="text-center space-y-4 mb-8">
-            <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-amber-300">
+            <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-amber-300">
                 माझे शब्दरूप विश्व
             </h2>
-            <p class="text-slate-400 text-xs md:text-sm">खालील पर्याय निवडून तुम्ही माझे विविध पैलूंचे लेखन वाचू शकता.</p>
             
             <!-- Filter Tabs -->
             <div class="flex flex-wrap justify-center gap-2 pt-2">
-                <button onclick="filterPosts('all')" id="btn-all" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-rose-500 text-white">
-                    सर्व काही
-                </button>
-                <button onclick="filterPosts('blog')" id="btn-blog" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300">
-                    ब्लॉग्स
-                </button>
-                <button onclick="filterPosts('poem')" id="btn-poem" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300">
-                    कविता
-                </button>
-                <button onclick="filterPosts('story')" id="btn-story" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300">
-                    कथा
-                </button>
-                <button onclick="filterPosts('experience')" id="btn-experience" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all glass text-slate-300">
-                    अनुभव
-                </button>
+                <button onclick="filterPosts('all')" id="btn-all" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold transition-all bg-pink-600 text-white shadow-lg shadow-pink-600/20">सर्व काही</button>
+                <button onclick="filterPosts('blog')" id="btn-blog" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold transition-all premium-glass text-slate-300">ब्लॉग्स</button>
+                <button onclick="filterPosts('poem')" id="btn-poem" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold transition-all premium-glass text-slate-300">कविता</button>
+                <button onclick="filterPosts('story')" id="btn-story" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold transition-all premium-glass text-slate-300">कथा</button>
+                <button onclick="filterPosts('experience')" id="btn-experience" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold transition-all premium-glass text-slate-300">अनुभव</button>
             </div>
         </div>
 
@@ -147,28 +207,30 @@
         </div>
     </section>
 
-    <!-- Post Creator Form -->
+    <!-- Post Creator Form (मखमली डायरी लूक) -->
     <section id="creator" class="py-8 px-4 max-w-4xl mx-auto">
-        <div class="glass p-6 md:p-8 rounded-3xl space-y-6 border border-amber-500/10">
+        <div class="premium-glass p-6 md:p-8 rounded-3xl space-y-6 border border-amber-500/20 shadow-2xl relative">
+            <div class="absolute top-0 right-12 w-20 h-20 bg-amber-500/10 blur-2xl rounded-full"></div>
+            
             <div class="flex items-center space-x-4">
-                <div class="p-3 bg-amber-500/20 text-amber-300 rounded-xl text-lg">
-                    <i class="fa-solid fa-pen-nib"></i>
+                <div class="p-3 bg-pink-500/20 text-pink-400 rounded-xl text-xl">
+                    <i class="fa-solid fa-feather-pointed"></i>
                 </div>
                 <div>
-                    <h3 class="text-lg md:text-xl font-bold text-white">नवीन अनुभव किंवा लेखन जोडा</h3>
-                    <p class="text-xs text-slate-400">इथे लिहिलेली माहिती लगेच तुमच्या ब्लॉगवर वरती दिसेल!</p>
+                    <h3 class="text-lg md:text-xl font-bold text-white">Knik's खास डायरी</h3>
+                    <p class="text-xs text-slate-400">इथे लिहिलेली माहिती सुंदर निऑन कार्ड स्वरूपात लगेच वरती दिसेल!</p>
                 </div>
             </div>
 
             <form id="post-form" onsubmit="savePost(event)" class="space-y-4">
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">शीर्षक (Title)</label>
-                        <input type="text" id="post-title" required placeholder="उदा. पावसाची ती सांज वेळ..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">शीर्षक (Title)</label>
+                        <input type="text" id="post-title" required placeholder="उदा. पावसाची ती सांज वेळ..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm transition-all">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">प्रकार (Category)</label>
-                        <select id="post-category" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">प्रकार (Category)</label>
+                        <select id="post-category" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm">
                             <option value="blog">ब्लॉग (Blog)</option>
                             <option value="poem">कविता (Poem)</option>
                             <option value="story">कथा (Story)</option>
@@ -177,15 +239,15 @@
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">संक्षिप्त वर्णन (Short Hook)</label>
-                    <input type="text" id="post-summary" required placeholder="एक वाक्यात लहान वर्णन द्या..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">संक्षिप्त ओळ (Short Hook)</label>
+                    <input type="text" id="post-summary" required placeholder="वाचकांना आकर्षित करणारी एक ओळ..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमचे पूर्ण लेखन (Full Content)</label>
-                    <textarea id="post-content" required rows="5" placeholder="इथे तुमचे विचार सविस्तर लिहा..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm"></textarea>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">सविस्तर लेखन (Full Content)</label>
+                    <textarea id="post-content" required rows="6" placeholder="तुमचे विचार, कविता किंवा कथा इथे मुक्तपणे मांडा..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3 bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 font-bold rounded-xl text-sm text-white shadow-md">
-                    🚀 ब्लॉगवर पब्लिश करा
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 font-bold rounded-xl text-sm text-white shadow-lg shadow-pink-500/10 hover:opacity-95 transition-all">
+                    🚀 डिजिटल डायरीत जतन करा
                 </button>
             </form>
         </div>
@@ -193,73 +255,67 @@
 
     <!-- Connect Form -->
     <section id="connect" class="py-8 px-4 max-w-4xl mx-auto">
-        <div class="glass p-6 md:p-8 rounded-3xl border border-rose-500/20 shadow-2xl space-y-6">
+        <div class="premium-glass p-6 md:p-8 rounded-3xl border border-pink-500/10 shadow-2xl space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
-                <h2 class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-rose-400">
-                    माझ्या प्रवासात सोबती...
+                <h2 class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-pink-400">
+                    माझ्या प्रवासात सोबती व्हा!
                 </h2>
-                <p class="text-xs text-slate-300">
-                    नवीन साहित्याचे अपडेट्स थेट मिळवण्यासाठी हा फॉर्म नक्की भरा.
-                </p>
+                <p class="text-xs text-slate-400">अपडेट्स थेट मिळवण्यासाठी जोडले जा.</p>
             </div>
             
             <form id="connect-form" onsubmit="saveLead(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमचे पूर्ण नाव</label>
-                    <input type="text" id="lead-name" required placeholder="उदा. राहुल माने" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                    <input type="text" id="lead-name" required placeholder="तुमचे पूर्ण नाव" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm">
                 </div>
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">मोबाईल नंबर</label>
-                        <input type="tel" id="lead-phone" pattern="[0-9]{10}" required placeholder="उदा. 9876543210" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                        <input type="tel" id="lead-phone" pattern="[0-9]{10}" required placeholder="मोबाईल नंबर" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">ईमेल आयडी</label>
-                        <input type="email" id="lead-email" required placeholder="उदा. rahul@gmail.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm">
+                        <input type="email" id="lead-email" required placeholder="ईमेल आयडी" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">तुमची प्रतिक्रिया (ऐच्छिक)</label>
-                    <textarea id="lead-note" rows="2" placeholder="प्रतिक्रिया लिहा..." class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700 focus:border-rose-500 outline-none text-slate-100 text-sm"></textarea>
+                    <textarea id="lead-note" rows="2" placeholder="तुमची प्रतिक्रिया..." class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-pink-500/10 focus:border-pink-500 outline-none text-slate-100 text-sm"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3 bg-gradient-to-r from-rose-500 to-pink-600 font-bold rounded-xl text-sm text-white shadow-lg flex justify-center items-center gap-2">
-                    <i class="fa-regular fa-paper-plane"></i> मला जोडून घ्या!
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-pink-500 to-rose-600 font-bold rounded-xl text-sm text-white shadow-lg flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> Knik@ सोबती व्हा
                 </button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="glass border-t border-white/5 py-6 text-center text-xs text-slate-400">
-        <p class="font-bold text-slate-300 mb-1 signature-style">Knik@</p>
+    <footer class="premium-glass border-t border-pink-500/10 py-8 text-center text-xs text-slate-500">
+        <p class="font-bold text-pink-400 mb-1 signature-style text-sm">Knik@</p>
         <p>© 2026 सर्व हक्क सुरक्षित.</p>
     </footer>
 
     <!-- Viewer Modal -->
-    <div id="read-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 justify-center items-center p-4">
-        <div class="glass max-w-2xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[85vh]">
-            <div class="p-6 border-b border-white/10 flex justify-between items-start">
+    <div id="read-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-50 justify-center items-center p-4">
+        <div class="premium-glass max-w-2xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[85vh] border border-pink-500/20">
+            <div class="p-6 border-b border-white/10 flex justify-between items-start bg-slate-950/40">
                 <div>
-                    <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 uppercase"></span>
+                    <span id="modal-category" class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/20 text-pink-300 uppercase"></span>
                     <h3 id="modal-title" class="text-xl md:text-2xl font-bold mt-2 text-white break-words"></h3>
                 </div>
                 <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="p-6 overflow-y-auto space-y-4 text-slate-200 leading-relaxed whitespace-pre-line text-sm md:text-base break-words" id="modal-content"></div>
+            <div class="p-6 overflow-y-auto space-y-4 text-slate-200 leading-relaxed whitespace-pre-line text-sm md:text-base break-words bg-slate-950/20" id="modal-content"></div>
         </div>
     </div>
 
     <!-- Admin Leads Modal -->
-    <div id="admin-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 justify-center items-center p-4">
-        <div class="glass max-w-3xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[80vh]">
-            <div class="p-4 border-b border-white/10 flex justify-between items-center bg-slate-950/60">
-                <h3 class="text-sm md:text-base font-bold text-white"><i class="fa-solid fa-users mr-2"></i>वाचकांची यादी</h3>
+    <div id="admin-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-50 justify-center items-center p-4">
+        <div class="premium-glass max-w-3xl w-full rounded-2xl overflow-hidden flex flex-col max-h-[80vh]">
+            <div class="p-4 border-b border-white/10 flex justify-between items-center bg-slate-950/80">
+                <h3 class="text-sm font-bold text-white"><i class="fa-solid fa-users mr-2"></i>वाचकांची यादी</h3>
                 <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="p-4 overflow-x-auto">
+            <div class="p-4 overflow-x-auto bg-slate-950/40">
                 <table class="w-full text-left border-collapse text-xs md:text-sm">
                     <thead>
-                        <tr class="border-b border-slate-700 text-slate-300">
+                        <tr class="border-b border-slate-700 text-slate-400">
                             <th class="pb-2 pr-2">क्र.</th>
                             <th class="pb-2 pr-2">नाव</th>
                             <th class="pb-2 pr-2">मोबाईल</th>
@@ -267,21 +323,18 @@
                             <th class="pb-2">टीप</th>
                         </tr>
                     </thead>
-                    <tbody id="leads-table-body" class="text-slate-300 divide-y divide-slate-800">
-                    </tbody>
+                    <tbody id="leads-table-body" class="text-slate-300 divide-y divide-slate-900"></tbody>
                 </table>
-                <div id="no-leads" class="text-center py-6 text-slate-500 hidden">अद्याप कोणीही फॉर्म भरलेला नाही.</div>
+                <div id="no-leads" class="text-center py-6 text-slate-600 hidden">अद्याप कोणीही फॉर्म भरलेला नाही.</div>
             </div>
-            <div class="p-4 border-t border-white/10 bg-slate-950/40 flex justify-between items-center">
-                <button onclick="clearLeads()" class="px-3 py-1.5 bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white rounded-lg text-xs font-bold">
-                    डेटा साफ करा
-                </button>
+            <div class="p-4 border-t border-white/10 bg-slate-950/60 flex justify-end">
+                <button onclick="clearLeads()" class="px-4 py-2 bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white rounded-lg text-xs font-bold transition-all">डेटा साफ करा</button>
             </div>
         </div>
     </div>
 
     <!-- Alert Toast -->
-    <div id="success-alert" class="fixed bottom-6 right-6 glass border-rose-500 p-4 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 text-xs font-bold text-white">
+    <div id="success-alert" class="fixed bottom-6 right-6 premium-glass border-pink-500 p-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 text-xs font-bold text-pink-300">
         <span id="alert-msg"></span>
     </div>
 
@@ -293,13 +346,6 @@
                 category: "poem",
                 summary: "पावसातल्या त्या पहिल्या थेंबासोबत मनात उठणाऱ्या प्रेमाच्या सुंदर लहरी...",
                 content: "पावसाची ती सांज वेळ, मन ओलेचिंब करणारे ऋतू...\nखिडकीबाहेर कोसळणारा पाऊस आणि मनात दाटून येणार तू!\n\nचहाच्या वाफाळलेल्या कपात तुझा तो हसरा चेहरा दिसतो,\nपहिल्या पावसाचा गंध जणू आपल्या आठवणीत दरवळतो."
-            },
-            {
-                id: 2,
-                title: "तो शेवटचा चहा आणि कट्ट्यावरच्या गप्पा",
-                category: "story",
-                summary: "कॉलेजचा शेवटचा दिवस आणि त्या निроपाच्या क्षणी मित्रांसोबत घेतलेला तो चहा.",
-                content: "कॉलेजचे ४ वर्ष कसे संपले कळलेच नाही. पण तो शेवटचा दिवस आणि कॉलेजच्या गेटबाहेरच्या चहाच्या गाड्यावरची ती शेवटची भेट अजूनही काळजात घर करून आहे.\n\n'पुन्हा कधी भेटू यार?' या प्रश्नावर सगळ्यांकडे शांतता होती."
             }
         ];
 
@@ -307,10 +353,23 @@
         let leads = JSON.parse(localStorage.getItem('knik_leads')) || [];
         let currentFilter = 'all';
 
+        // थीम मूड़ चेंजर टूल स्क्रिप्ट
+        function changeMood(mood) {
+            const body = document.body;
+            if(mood === 'midnight') {
+                body.style.background = "radial-gradient(circle at 50% 0%, #2e1065 0%, #1e1b4b 35%, #090514 100%)";
+            } else if(mood === 'sunset') {
+                body.style.background = "radial-gradient(circle at 50% 0%, #4c1d95 0%, #451a03 40%, #0c0a09 100%)";
+            } else if(mood === 'cyber') {
+                body.style.background = "radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 60%, #000000 100%)";
+            }
+            showAlert("थीम यशस्वीरित्या बदलली!");
+        }
+
         function filterPosts(cat) {
             currentFilter = cat;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('bg-rose-500', 'text-white'));
-            document.getElementById(`btn-${cat}`).classList.add('bg-rose-500', 'text-white');
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('bg-pink-600', 'text-white'));
+            document.getElementById(`btn-${cat}`).classList.add('bg-pink-600', 'text-white');
             renderPosts();
         }
 
@@ -322,17 +381,17 @@
             filtered.forEach(p => {
                 const catLabel = p.category === 'poem' ? 'कविता' : p.category === 'story' ? 'कथा' : p.category === 'experience' ? 'अनुभव' : 'ब्लॉग';
                 grid.innerHTML += `
-                    <div class="glass p-5 rounded-2xl flex flex-col justify-between border border-white/5 overflow-hidden">
+                    <div class="premium-glass p-6 rounded-2xl flex flex-col justify-between border border-white/5 neon-border-hover transition-all duration-300">
                         <div class="space-y-3">
-                            <div class="flex justify-between items-center text-xs text-rose-300 font-bold">
+                            <div class="flex justify-between items-center text-xs text-pink-400 font-bold">
                                 <span>${catLabel}</span>
-                                <span class="text-slate-500">आज</span>
+                                <span class="text-slate-600">नवीन</span>
                             </div>
                             <h3 class="text-base font-bold text-white break-words">${p.title}</h3>
                             <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed break-words">${p.summary}</p>
                         </div>
                         <div class="pt-4 mt-4 border-t border-white/5 flex justify-between items-center">
-                            <button onclick="readPost(${p.id})" class="text-xs font-bold text-rose-400 hover:underline">संपूर्ण वाचा →</button>
+                            <button onclick="readPost(${p.id})" class="text-xs font-bold text-pink-400 hover:underline">संपूर्ण वाचा →</button>
                             <button onclick="deletePost(${p.id})" class="text-slate-600 hover:text-rose-500 text-xs"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
@@ -351,9 +410,7 @@
             }
         }
 
-        function closeModal() {
-            document.getElementById('read-modal').classList.add('hidden');
-        }
+        function closeModal() { document.getElementById('read-modal').classList.add('hidden'); }
 
         function savePost(e) {
             e.preventDefault();
@@ -364,13 +421,13 @@
 
             posts.unshift({ id: Date.now(), title, category, summary, content });
             localStorage.setItem('knik_posts', JSON.stringify(posts));
-            showAlert("नवीन लेखन यशस्वीरित्या जोडले गेले!");
+            showAlert("डायरीत यशस्विरित्या लिहून झाले!");
             document.getElementById('post-form').reset();
             renderPosts();
         }
 
         function deletePost(id) {
-            if(confirm("डिलीट करायचे का?")) {
+            if(confirm("लेखन काढून टाकायचे का?")) {
                 posts = posts.filter(p => p.id !== id);
                 localStorage.setItem('knik_posts', JSON.stringify(posts));
                 renderPosts();
@@ -387,7 +444,7 @@
 
             leads.push({ id: Date.now(), name, phone, email, note });
             localStorage.setItem('knik_leads', JSON.stringify(leads));
-            showAlert("धन्यवाद! माहिती जतन झाली.");
+            showAlert("धन्यवाद! तुम्ही Knik@ प्रवासात सामील झालात.");
             document.getElementById('connect-form').reset();
         }
 
@@ -401,13 +458,11 @@
                 } else {
                     document.getElementById('no-leads').classList.add('hidden');
                     leads.forEach((l, i) => {
-                        body.innerHTML += `<tr><td class="py-2 pr-2">${i+1}</td><td class="font-bold text-white pr-2">${l.name}</td><td class="pr-2">${l.phone}</td><td class="pr-2">${l.email}</td><td class="break-all">${l.note}</td></tr>`;
+                        body.innerHTML += `<tr><td class="py-3 pr-2 text-slate-500">${i+1}</td><td class="font-bold text-white pr-2">${l.name}</td><td class="pr-2 text-pink-300">${l.phone}</td><td class="pr-2">${l.email}</td><td class="break-all text-slate-400">${l.note}</td></tr>`;
                     });
                 }
                 m.classList.remove('hidden'); m.classList.add('flex');
-            } else {
-                m.classList.add('hidden');
-            }
+            } else { m.classList.add('hidden'); }
         }
 
         function clearLeads() {
@@ -427,4 +482,3 @@
     </script>
 </body>
 </html>
-     
